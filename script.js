@@ -33,4 +33,9 @@ function addMessage(sender, text) {
   box.appendChild(div);
   box.scrollTop = box.scrollHeight;
 }
+fetch("https://focused-integrity.up.railway.app/api/chat", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({ messages: [{ role: "user", content: text }] })
+});
 
